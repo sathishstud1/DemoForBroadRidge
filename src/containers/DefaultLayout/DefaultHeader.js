@@ -72,7 +72,7 @@ class DefaultHeader extends Component {
   render() {
     // eslint-disable-next-line
     const { children, ...attributes } = this.props;
-    this.verifyProfile(this.props.profileObj);
+    //this.verifyProfile(this.props.profileObj);
     return (
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
@@ -200,10 +200,10 @@ class DefaultHeader extends Component {
                 <i className="fa fa-shield"></i> Lock Account
               </DropdownItem>
               <DropdownItem
-                onClick={(e) => {
+                /*onClick={(e) => {
                   this.props.logOut();
                   this.props.onLogout();                  
-                }}
+                }}*/
               >
                 <i className="fa fa-lock"></i>Logout                
               </DropdownItem>

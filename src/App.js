@@ -16,6 +16,7 @@ const Login = React.lazy(() => import('./views/Pages/Login/Login'));
 const Register = React.lazy(() => import('./views/Pages/Register/Register'));
 const ErrorPage = React.lazy(() => import('./views/Pages/Error/LoginError'));
 const Page500 = React.lazy(() => import('./views/Pages/Page500/Page500'));
+const Dashboard = React.lazy(() => import("./views/Dashboard/Dashboard"));
 
 class App extends Component {
 
@@ -25,11 +26,7 @@ class App extends Component {
         <BrowserRouter>
         <PersistGate persistor={persistor}>
           <React.Suspense fallback={loading()}>
-            <Switch>
-              <Route exact
-                     path={["/", "/login"]}
-                     name="Login Page"
-                     render={props => <Login {...props}/>}/>
+            <Switch>             
               <Route exact
                      path="/register"
                      name="Register Page"

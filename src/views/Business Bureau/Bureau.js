@@ -7,6 +7,7 @@ import JSONSchemaForm from "@rjsf/core";
 import JSONTree from "react-json-tree";
 import axios from "../../axios-instance";
 import {withRouter} from 'react-router';
+import ParseBureauJson from './ParseBureauJson';
 
 
 class Bureau extends Component {
@@ -116,7 +117,7 @@ class Bureau extends Component {
 
     const Form = JSONSchemaForm;
     const formSchema = jsonSchemaGenerator(this.json);
-    setTimeout(this.updateStyles, 0);
+    //setTimeout(this.updateStyles, 0);
     let commercial_score  = this.state.commericalScore;
     let scorePercentage = this.state.commericalScore;
     if(scorePercentage!=0){
@@ -213,10 +214,11 @@ class Bureau extends Component {
                 <div
                   className="json-report-view"
                   id="json-report-view"
-                  onClick={() => setTimeout(this.updateStyles, 0)}
+                  onClick={() => this.updateStyles()}
                 >
                   <JSONTree hideRoot={true} data={this.json} />
                 </div>
+                {/*<ParseBureauJson json={this.json}/>*/}
               </CardBody>
             </Card>
           </Col>
